@@ -1,0 +1,38 @@
+[project]
+name = "universal-consultant"
+version = "0.1.0"
+description = "Диалоговый консультант по товарам и услугам: заказ или запись после явного согласия клиента."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.uv]
+package = false
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.7.0",
+    "ruff>=0.17.1",
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+src = ["src"]
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle
+    "F",   # Pyflakes
+    "I",   # isort
+    "UP",  # pyupgrade
+    "B",   # flake8-bugbear
+    "SIM", # flake8-simplify
+    "RUF", # Ruff-specific rules
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["universal_consultant"]
+
+[tool.ruff.format]
+docstring-code-format = true
